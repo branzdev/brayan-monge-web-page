@@ -1,0 +1,19 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto&display=swap);
+
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	font-size: var(--mainFontSize);
+	font-family: var(--mainFont);
+	//remove the blue background of button on mobile
+	-webkit-tap-highlight-color: transparent;
+}
+
+:root {
+	--mainFont: 'Roboto', sans-serif;
+	--mainColor: #ffcb0c;
+	--animationDelay: 0.6s;
+	--mainFontSize: 12px;
+	--mainLetterSpacing: 0.2rem;
+}

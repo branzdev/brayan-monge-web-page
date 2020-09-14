@@ -1,0 +1,484 @@
+.particles {
+	position: absolute;
+	z-index: 1;
+	height: 100vh;
+	width: 100vw;
+	background: #000;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 40px 85px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 100;
+	transition: var(--animationDelay);
+}
+
+.backgroundFont {
+	position: absolute;
+	z-index: 50;
+	font-weight: bolder;
+	text-transform: uppercase;
+	color: #ffffff30;
+	font-size: 16rem;
+	transition: 2s;
+	text-align: left;
+	width: 70px;
+	height: 70px;
+
+	//variables
+	$topStart: 10%;
+	$leftStart: 47%;
+	$sumT: 15;
+	$sumL: 8;
+	$newTop: $topStart + $sumT;
+	$newLeft: $leftStart + $sumL;
+
+	@for $i from 1 through 5 {
+		@if $i==1 {
+			&:nth-of-type(#{$i}) {
+				top: $topStart;
+				left: $leftStart;
+			}
+		} @else if $i!=1 {
+			&:nth-of-type(#{$i}) {
+				top: $newTop;
+				left: $newLeft;
+			}
+			$newTop: $newTop + $sumT;
+			$newLeft: $newLeft + $sumL;
+		}
+	}
+	@media screen and (max-width: 1690px) {
+		$topStart: 15%;
+		$leftStart: 17%;
+		$sumT: 0;
+		$sumL: 13;
+		$newTop: $topStart + $sumT;
+		$newLeft: $leftStart + $sumL;
+		& {
+			font-size: 12rem;
+		}
+		@for $i from 1 through 5 {
+			@if $i==1 {
+				&:nth-of-type(#{$i}) {
+					top: $topStart;
+					left: $leftStart;
+				}
+			} @else if $i!=1 {
+				&:nth-of-type(#{$i}) {
+					top: $newTop;
+					left: $newLeft;
+				}
+				$newTop: $newTop + $sumT;
+				$newLeft: $newLeft + $sumL;
+			}
+		}
+	}
+	@media screen and (max-width: 930px) {
+		$topStart: 15%;
+		$leftStart: 10%;
+		$sumT: 15;
+		$sumL: 0;
+		$newTop: $topStart + $sumT;
+		$newLeft: $leftStart + $sumL;
+		@for $i from 1 through 5 {
+			@if $i==1 {
+				&:nth-of-type(#{$i}) {
+					top: $topStart;
+					left: $leftStart;
+				}
+			} @else if $i!=1 {
+				&:nth-of-type(#{$i}) {
+					top: $newTop;
+					left: $newLeft;
+				}
+				$newTop: $newTop + $sumT;
+				$newLeft: $newLeft + $sumL;
+			}
+		}
+	}
+	@media screen and (max-width: 430px) {
+		$topStart: 15%;
+		$leftStart: 5%;
+		$sumT: 0;
+		$sumL: 18;
+		$newTop: $topStart + $sumT;
+		$newLeft: $leftStart + $sumL;
+
+		& {
+			font-size: 8rem;
+		}
+
+		@for $i from 1 through 5 {
+			@if $i==1 {
+				&:nth-of-type(#{$i}) {
+					top: $topStart;
+					left: $leftStart;
+				}
+			} @else if $i!=1 {
+				&:nth-of-type(#{$i}) {
+					top: $newTop;
+					left: $newLeft;
+				}
+				$newTop: $newTop + $sumT;
+				$newLeft: $newLeft + $sumL;
+			}
+		}
+	}
+	@media screen and (max-width: 350px) {
+		& {
+			font-size: 6rem;
+		}
+	}
+}
+
+.home {
+	overflow-x: hidden;
+	position: relative;
+	height: 100vh;
+	padding: 100px 300px;
+	display: flex;
+	align-items: center;
+	transition: 0.5s;
+	z-index: 200;
+}
+
+.home.active {
+	transform: translateX(-400px);
+}
+
+.content {
+	width: 100%;
+}
+
+.content h2 {
+	color: #fff;
+	font-size: 3rem;
+	margin: 10px 0;
+	letter-spacing: var(--mainLetterSpacing);
+}
+
+.content h3 {
+	color: lightgray;
+	font-size: 2.3rem;
+	margin: 10px 0;
+	letter-spacing: var(--mainLetterSpacing);
+}
+
+.content h2 span {
+	color: var(--mainColor);
+	font-size: 3.5rem;
+	letter-spacing: var(--mainLetterSpacing);
+}
+
+.content a {
+	position: relative;
+	display: inline-block;
+	margin-top: 20px;
+	border: solid var(--mainColor) 1px;
+	border-radius: 5px;
+	color: #fff;
+	text-decoration: none;
+	font-size: 2.5rem;
+	font-weight: 500;
+	padding: 4px;
+}
+
+.content a:hover {
+	color: #000;
+	background: var(--mainColor);
+}
+
+.socialButton {
+	position: absolute;
+	border-radius: 50%;
+	bottom: 4rem;
+	right: 2rem;
+	display: none;
+}
+
+.socialButtonIcon {
+	position: absolute;
+	font-size: 4rem;
+	height: 3rem;
+	width: 3rem;
+	cursor: pointer;
+	color: #fff;
+	transition: all var(--animationDelay);
+}
+
+.nav {
+	position: fixed;
+	top: 0;
+	right: -400px;
+	width: 400px;
+	height: 100vh;
+	background: var(--mainColor);
+	z-index: 100;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: right 0.5s;
+}
+
+.nav.active {
+	right: 0;
+	z-index: 155;
+}
+
+.nav ul {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+}
+
+.nav ul li {
+	list-style: none;
+	display: flex;
+	min-width: 200px;
+}
+
+.nav ul li:hover {
+	padding-left: 10px;
+}
+
+.nav ul li:hover:before {
+	content: '';
+	position: absolute;
+	height: 10px;
+	width: 2px;
+	background: #000;
+}
+
+.nav ul li a {
+	color: #000;
+	text-decoration: none;
+	font-size: 2rem;
+	display: inline-block;
+	text-transform: uppercase;
+	font-weight: 800;
+	margin: 25px 15px;
+}
+
+header .logo {
+	position: relative;
+	text-decoration: none;
+	font-size: 2.5rem;
+	color: #fff;
+	text-transform: uppercase;
+}
+
+header .toggleButton {
+	position: relative;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	--backgroundToggle: #fff;
+}
+
+header .toggleButton:hover {
+	--backgroundToggle: var(--mainColor);
+}
+
+header .toggleButton:before {
+	content: '';
+	position: absolute;
+	top: 7px;
+	width: 100%;
+	height: 2px;
+	background: var(--backgroundToggle);
+}
+
+header .toggleButton:after {
+	content: '';
+	position: absolute;
+	bottom: 7px;
+	width: 100%;
+	height: 2px;
+	background: var(--backgroundToggle);
+}
+
+.home.active header .toggleButton::before {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.home.active header .toggleButton::after {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.socialMedia {
+	position: absolute;
+	right: 100px;
+	transition: all var(--animationDelay);
+}
+
+.socialMedia ul {
+	display: flex;
+	flex-direction: column;
+}
+
+.socialMedia ul li {
+	list-style: none;
+}
+
+.socialMedia ul li a {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	text-decoration: none;
+	border: 1px solid #fff;
+	border-radius: 5px;
+	margin: 10px 10px;
+	transition: all var(--animationDelay);
+}
+
+.socialMedia ul li a:hover {
+	background: var(--mainColor);
+}
+
+.socialMedia ul li a img {
+	max-width: 25px;
+	-webkit-filter: invert(1);
+	filter: invert(1);
+	mix-blend-mode: difference;
+}
+
+@media screen and (max-width: 1690px) {
+	.home {
+		padding: 300px 300px 200px 300px;
+	}
+}
+
+@media screen and (max-width: 970px) {
+	.home {
+		padding: 300px 200px 100px 200px;
+	}
+}
+
+@media screen and (max-width: 930px) {
+	.home {
+		padding: 200px;
+	}
+}
+@media screen and (max-width: 850px) {
+	.socialMedia {
+		bottom: 50px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	.socialMedia ul {
+		flex-direction: row;
+	}
+	.home {
+		padding: 100px 50px 100px 200px;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.home {
+		padding: 100px 25px 100px 200px;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.socialMedia {
+		position: relative;
+		width: 48px;
+	}
+	.socialMedia ul {
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+	.socialMedia ul li a {
+		border: none;
+		opacity: 0;
+		visibility: hidden;
+		bottom: -54rem;
+	}
+
+	.socialButton.active {
+		.socialMedia ul li a {
+			position: relative;
+			border: 1px solid #fff;
+			opacity: 1;
+			visibility: visible;
+			bottom: 0;
+		}
+		.socialButtonIcon {
+			color: var(--mainColor);
+		}
+		.socialMedia {
+			height: 300px;
+		}
+	}
+	.home {
+		padding: 100px 50px 100px 200px;
+		overflow: hidden;
+	}
+	header {
+		padding: 40px 40px;
+	}
+	.socialButton {
+		width: 48px;
+		min-height: 350px;
+		display: flex;
+		align-items: flex-end;
+	}
+
+	.socialButtonIcon {
+		position: absolute;
+	}
+	.nav {
+		right: -300px;
+		width: 300px;
+	}
+	.home.active {
+		transform: translateX(-300px);
+	}
+
+	.content h2 {
+		font-size: 2.5rem;
+	}
+
+	.content h3 {
+		font-size: 2rem;
+	}
+
+	.content h2 span {
+		font-size: 2.5rem;
+	}
+}
+
+@media screen and (max-width: 470px) {
+	.nav {
+		right: -250px;
+		width: 250px;
+	}
+	.home {
+		padding: 100px 50px 100px 160px;
+	}
+	.home.active {
+		transform: translateX(-250px);
+	}
+}
+
+@media screen and (max-width: 430px) {
+	.home {
+		padding: 300px 50px 100px 50px;
+		justify-content: center;
+	}
+}
