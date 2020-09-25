@@ -20,22 +20,18 @@ export default class Curriculum extends Component {
 					<h1>Brayan Monge Méndez</h1>
 				</div>
 				<div className="left">
-					<h1>Profile</h1>
+					<h1>Personal Info</h1>
 					<div className="divider"></div>
 					<h3>{this.iconID}</h3>
 					<p>118170449</p>
-					<h3>{this.iconMail}</h3>
-					<p>bmongemendez@gmail.com</p>
 					<h3>{this.iconHome}</h3>
-					<p>San Ramón, Alajuela</p>
+					<p>San Ramón, Alajuela, Costa Rica</p>
 					<h3>{this.iconMobile}</h3>
 					<p>(+506) 8815 8298</p>
 					<div className="divider"></div>
-					<h2>Idioms</h2>
-					<p>Spanish: Mother Tongue</p>
+					<h2>Languages</h2>
 					<p>English: Intermediate</p>
-					<div className="divider"></div>
-					<h2>Skills</h2>
+					<p>Spanish: Mother Tongue</p>
 				</div>
 				<div className="right">
 					<div className="languagesDiv">

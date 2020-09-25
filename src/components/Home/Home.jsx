@@ -55,7 +55,7 @@ export default class Home extends Component {
 				<div className={`home ${this.state.isNavActive ? 'active' : ''}`}>
 					<header>
 						<a href="/" className="logo">
-							Logo
+							BMM
 						</a>
 						<div
 							className="toggleButton"
