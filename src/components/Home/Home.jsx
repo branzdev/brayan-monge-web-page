@@ -151,10 +151,10 @@ export default class Home extends Component {
 							<a href="/">Home</a>
 						</li>
 						<li>
-							<a href="./Curriculum">Portfolio</a>
+							<a href="./curriculum">Portfolio</a>
 						</li>
 						<li>
-							<a href="/">Proyects</a>
+							<a href="/projects">Proyects</a>
 						</li>
 						<li>
 							<a href="/">Contact</a>
