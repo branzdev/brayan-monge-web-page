@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+//Styles
+import './projects.scss';
+//Components
+import SideNav from '../SideNav/SideNav';
+import Header from '../Header/Header';
 
 export default class Proyects extends Component {
 	state = {
@@ -10,6 +15,7 @@ export default class Proyects extends Component {
 	render() {
 		return (
 			<div>
+				<Header />
 				<div className="projectDiv">
 					<div class="leftArrow">
 						<svg
@@ -41,6 +47,7 @@ export default class Proyects extends Component {
 						</svg>
 					</div>
 				</div>
+				<SideNav />
 			</div>
 		);
 	}

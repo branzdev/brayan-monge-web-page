@@ -6,11 +6,14 @@ import logoFacebook from '../../img/facebook.svg';
 import logoInstagram from '../../img/instagram.svg';
 import logoLinkedin from '../../img/linkedin.svg';
 import logoGitHub from '../../img/github.svg';
-//Particles
-import Particles from 'react-particles-js';
-// FontAwesome
+
+//FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHashtag } from '@fortawesome/free-solid-svg-icons';
+//Components
+import ParticlesBackground from '../ParticlesBackground/ParticlesBackground';
+import SideNav from '../SideNav/SideNav';
+import Header from '../Header/Header';
 
 export default class Home extends Component {
 	state = {
@@ -23,49 +26,10 @@ export default class Home extends Component {
 	render() {
 		// console.log(this.state.isNavActive);
 		return (
-			<div className="homeBody">
-				<Particles
-					className="particles"
-					params={{
-						particles: {
-							number: {
-								value: 50,
-							},
-							size: {
-								value: 3,
-							},
-						},
-						interactivity: {
-							events: {
-								onhover: {
-									enable: true,
-									mode: 'repulse',
-								},
-							},
-						},
-						opacity: {
-							value: 0,
-							random: false,
-							anim: {
-								enable: false,
-							},
-						},
-					}}
-				/>
-				<div className={`home ${this.state.isNavActive ? 'active' : ''}`}>
-					<header>
-						<a href="/" className="logo">
-							BMM
-						</a>
-						<div
-							className="toggleButton"
-							onClick={() =>
-								this.setState({
-									isNavActive: !this.state.isNavActive,
-								})
-							}
-						></div>
-					</header>
+			<>
+				<ParticlesBackground />
+				<div className="home">
+					<Header />
 					<div className="backgroundFontDiv">
 						<span className="backgroundFont">H</span>
 						<span className="backgroundFont">e</span>
@@ -144,24 +108,9 @@ export default class Home extends Component {
 							{this.element}
 						</div>
 					</div>
+					<SideNav />
 				</div>
-				<nav className={`nav ${this.state.isNavActive ? 'active' : ''}`}>
-					<ul>
-						<li>
-							<a href="/">Home</a>
-						</li>
-						<li>
-							<a href="./curriculum">Portfolio</a>
-						</li>
-						<li>
-							<a href="/projects">Proyects</a>
-						</li>
-						<li>
-							<a href="/">Contact</a>
-						</li>
-					</ul>
-				</nav>
-			</div>
+			</>
 		);
 	}
 }

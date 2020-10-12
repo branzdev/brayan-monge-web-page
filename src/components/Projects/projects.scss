@@ -1,8 +1,8 @@
-projectImage {
-	height: 600px;
-	width: 800px;
-	background: black;
-	position: absolute;
-	background-position: center;
-	background-size: cover;
+.projectDiv {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	background: #aaa;
 }
