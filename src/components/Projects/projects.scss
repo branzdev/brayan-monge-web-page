@@ -1,8 +1,75 @@
-.projectDiv {
-	height: 100vh;
+@import '../../styles//index.scss';
+
+.projects {
+	position: relative;
 	display: flex;
-	justify-content: center;
 	align-items: center;
-	flex-direction: row;
-	background: #aaa;
+	justify-content: center;
+	transition: 0.5s;
+	z-index: 110;
+	overflow: hidden;
+	height: 100vh;
+	width: 100%;
+	//background: rgba(255, 255, 255, 0.4);
+
+	.projects__leftArrow,
+	.projects__rightArrow {
+		display: flex;
+		position: absolute;
+		top: 50%;
+		z-index: 300;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		border-radius: var(--borderRadius);
+		&:hover {
+			background-color: var(--colorMain);
+		}
+	}
+
+	.projects__leftArrow {
+		left: 10%;
+	}
+
+	.projects__rightArrow {
+		right: 10%;
+	}
+	.projects__leftArrow svg:hover,
+	.projects__rightArrow svg:hover {
+		filter: invert(1);
+	}
+
+	.projects__current {
+		display: flex;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: 5%;
+	}
+
+	.projects__current-selection {
+		position: relative;
+		height: 15px;
+		width: 15px;
+		background: black;
+		border: var(--borderSize) solid white;
+		margin: 10px;
+		border-radius: var(--borderRadius);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+	}
+
+	.projects__current-selection.active::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: var(--colorMain);
+		height: 100%;
+		width: 100%;
+	}
 }

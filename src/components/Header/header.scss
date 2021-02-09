@@ -1,4 +1,6 @@
-header {
+@import '../../styles//index.scss';
+
+.header {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -9,15 +11,16 @@ header {
 	padding: 10px 5%;
 	justify-content: space-between;
 	align-items: center;
-	z-index: 100;
+	z-index: 1000;
 	transition: var(--animationDelay);
 }
 
-header .logo {
+.header__logo {
 	position: relative;
 	text-decoration: none;
-	font-size: 2.5rem;
-	color: #fff;
+	font: var(--fontLogo);
+	letter-spacing: 5px;
+	color: var(--colorLight);
 	text-transform: uppercase;
 }
 

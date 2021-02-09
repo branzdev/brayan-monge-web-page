@@ -1,0 +1,18 @@
+@import './variables';
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font: var(--fontMain);
+	-webkit-tap-highlight-color: transparent; //remove the blue background of button on mobile
+}
+
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font: var(--fontMain);
+	-webkit-tap-highlight-color: transparent; //remove the blue background of button on mobile
+}
