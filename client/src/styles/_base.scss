@@ -1,0 +1,102 @@
+@import './variables';
+@import './mixins';
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font: var(--fontMain);
+	-webkit-tap-highlight-color: transparent; //remove the blue background of button on mobile
+}
+
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font: var(--fontMain);
+	-webkit-tap-highlight-color: transparent; //remove the blue background of button on mobile
+}
+
+/* ----- Sweet Alert 2 Custom Styles ---- */
+
+//Alert
+
+.sweet-alert2__container {
+	background: rgba(0, 0, 0, 0.7) !important;
+	font: var(--fontMain) !important;
+	border-radius: var(--borderRadius) !important;
+
+	.sweet-alert2__title {
+		font: var(--fontHeader2) !important;
+	}
+
+	.sweet-alert2__content {
+		font: var(--fontMain) !important;
+	}
+
+	.sweet-alert2__popup {
+		background: var(--colorLight) !important;
+		border-radius: inherit !important;
+		box-shadow: none !important;
+	}
+
+	.sweet-alert2__confirm-button {
+		background: var(--colorMain) !important;
+		outline: none !important;
+		border-radius: var(--borderRadius) !important;
+		font: var(--fontMain) !important;
+		color: var(--colorDark) !important;
+		line-height: initial !important;
+		-webkit-box-shadow: none !important;
+		box-shadow: none !important;
+
+		&:active,
+		&:focus,
+		&:target {
+			transform: scale(0.9);
+		}
+	}
+}
+
+//Toast
+
+.sweet-alert2__container-toast {
+	font: var(--fontMain) !important;
+	border-radius: var(--borderRadius) !important;
+
+	@include max-breakpoint('small') {
+		width: 100% !important;
+	}
+
+	.sweet-alert2__popup-toast {
+		background: var(--colorLight) !important;
+		border-radius: inherit !important;
+		box-shadow: none !important;
+	}
+
+	.sweet-alert2__title-toast {
+		font: var(--fontMain) !important;
+	}
+
+	.sweet-alert2__content-toast {
+		font: var(--fontMain) !important;
+	}
+
+	.sweet-alert2__confirm-button-toast {
+		background: var(--colorMain) !important;
+		border-radius: var(--borderRadius) !important;
+		font: var(--fontMain) !important;
+		line-height: initial !important;
+		color: var(--colorDark) !important;
+		-webkit-box-shadow: none !important;
+		box-shadow: none !important;
+		outline: none !important;
+
+		&:active,
+		&:focus,
+		&:target {
+			transform: scale(0.9);
+		}
+	}
+}

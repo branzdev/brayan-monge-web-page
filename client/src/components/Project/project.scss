@@ -1,0 +1,79 @@
+@import '../../styles//index.scss';
+
+.project {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+
+	@extend %disable-select;
+}
+
+.project__header1 {
+	color: white;
+	font-size: rem(72px);
+}
+
+.project__span {
+	color: var(--colorMain);
+	font-size: rem(72px);
+}
+
+.project__header2 {
+	color: white;
+	font-size: rem(54px);
+	display: inline-block;
+	position: relative;
+}
+
+.project__utility {
+	color: var(--colorMain);
+	font-size: rem(18px);
+	position: absolute;
+	top: 15px;
+	padding-left: 10px;
+}
+
+.project__button-container {
+	display: flex;
+	margin-top: 75px;
+}
+
+.project__text {
+	padding-top: 2rem;
+	max-width: 55%;
+	color: white;
+	font-size: rem(27px);
+	text-align: center;
+}
+
+.project__button {
+	margin-right: 50px;
+
+	&:nth-last-child() {
+		margin-right: 0;
+	}
+}
+
+.project__logos {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.project__logo {
+	margin: 0 15px;
+	margin-top: 75px;
+	height: 75px;
+	width: 75px;
+}
+
+.project__logo.hovered {
+	position: absolute;
+	transform: scale(2);
+}

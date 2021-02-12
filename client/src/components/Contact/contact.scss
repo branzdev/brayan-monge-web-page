@@ -1,0 +1,10 @@
+@import '../../styles//index.scss';
+
+.contact {
+	position: relative;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	transition: 0.5s;
+	z-index: 110;
+}
