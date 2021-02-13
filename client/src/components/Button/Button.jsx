@@ -4,10 +4,11 @@ import { motion } from 'framer-motion';
 import './button.scss';
 
 export default function Button({ className, text, img }) {
+	const maxWidth = window.matchMedia('(min-width: 481px)');
 	return (
 		<motion.button whileTap={{ scale: 0.9 }} className={`button ${className}`}>
 			{img && <img className="button__image" src={img} alt=""></img>}
-			<p className="button__text">{text}</p>
+			{maxWidth.matches && <p className="button__text">{text}</p>}
 		</motion.button>
 	);
 }

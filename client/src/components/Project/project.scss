@@ -10,67 +10,159 @@
 	top: 0;
 	bottom: 0;
 	left: 0;
+	text-align: center;
 
 	@extend %disable-select;
+
+	@include max-breakpoint('medium') {
+		padding: 100px 50px 0;
+	}
+
+	@include max-breakpoint('xsmall') {
+		padding: 100px 25px 100px;
+	}
+
+	@include max-breakpoint(350px) {
+		padding: 0 25px 0;
+	}
 }
 
 .project__header1 {
-	color: white;
-	font-size: rem(72px);
+	color: var(--colorLight);
+	font-size: (72px);
+
+	@include max-breakpoint('large') {
+		font: var(--fontHeader2);
+	}
 }
 
 .project__span {
 	color: var(--colorMain);
-	font-size: rem(72px);
+	font: var(--fontHeader2);
+	font-size: (72px);
+	@include max-breakpoint('large') {
+		font: var(--fontHeader2);
+	}
 }
 
 .project__header2 {
-	color: white;
 	font-size: rem(54px);
+	color: var(--colorLight);
 	display: inline-block;
 	position: relative;
+	@include max-breakpoint('large') {
+		font: var(--fontHeader3);
+	}
 }
 
 .project__utility {
 	color: var(--colorMain);
-	font-size: rem(18px);
+	font: var(--fontMain);
 	position: absolute;
 	top: 15px;
 	padding-left: 10px;
+
+	@include max-breakpoint('large') {
+		top: 5px;
+	}
+
+	@include max-breakpoint('medium') {
+		font-size: rem(14px);
+		top: 5px;
+	}
 }
 
 .project__button-container {
 	display: flex;
 	margin-top: 75px;
+
+	@include max-breakpoint('large') {
+		margin-top: 50px;
+	}
+
+	@include max-breakpoint('medium') {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	@include max-breakpoint('medium') {
+		flex-direction: row;
+	}
+
+	@include max-breakpoint('xsmall') {
+		margin-top: 25px;
+	}
 }
 
 .project__text {
-	padding-top: 2rem;
+	padding-top: rem(50px);
 	max-width: 55%;
-	color: white;
+	color: var(--colorLight);
 	font-size: rem(27px);
 	text-align: center;
+
+	@include max-breakpoint('medium') {
+		font: var(--fontMain);
+		max-width: 100%;
+	}
+
+	@include max-breakpoint('xsmall') {
+		padding-top: 25px;
+	}
 }
 
 .project__button {
 	margin-right: 50px;
 
-	&:nth-last-child() {
-		margin-right: 0;
+	@include max-breakpoint('medium') {
+		margin: 0;
+		margin-bottom: 50px;
 	}
+
+	@include max-breakpoint('medium') {
+		margin-right: 15px;
+		margin-bottom: 0;
+	}
+}
+
+.project__button--github {
+	margin-right: 0;
+	margin-bottom: 0;
 }
 
 .project__logos {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	max-width: 100%;
+	height: auto;
+	margin-top: 75px;
+
+	@include max-breakpoint('large') {
+		margin-top: 25px;
+	}
+	@include max-breakpoint('xsmall') {
+		flex-wrap: wrap;
+	}
+
+	@include max-breakpoint(350px) {
+		display: none;
+	}
 }
 
 .project__logo {
 	margin: 0 15px;
-	margin-top: 75px;
 	height: 75px;
 	width: 75px;
+
+	@include max-breakpoint('medium') {
+		height: 50px;
+		width: 50px;
+	}
+
+	@include max-breakpoint('xsmall') {
+		margin-top: 15px;
+	}
 }
 
 .project__logo.hovered {

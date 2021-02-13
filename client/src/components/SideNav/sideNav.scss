@@ -3,20 +3,31 @@
 .side-nav {
 	position: fixed;
 	top: 0;
-	right: -400px;
+	right: 0;
+	transform: translateX(100%);
 	width: 400px;
 	height: 100vh;
 	background: var(--colorMain);
 	z-index: 1000;
 	display: flex;
-	justify-content: center;
 	align-items: center;
-	transition: all 0.3s ease-out;
+	transition: all var(--transitionDuration) ease-out;
+
+	@include max-breakpoint('xsmall') {
+		width: 100%;
+	}
 }
 
 .side-nav.active {
-	right: 0;
-	z-index: 1000;
+	transform: translateX(0);
+	@include max-breakpoint('xsmall') {
+		.side-nav__toggle-button {
+			left: unset;
+			right: 25px;
+			z-index: 10000;
+			--backgroundToggle: var(--colorDark);
+		}
+	}
 }
 
 .side-nav__list {
@@ -25,13 +36,16 @@
 	flex-direction: column;
 	justify-content: center;
 	width: 300px;
-	left: 100px;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0);
 }
 
 .side-nav__list-item {
 	display: flex;
 	justify-content: center;
 	list-style: none;
+
 	cursor: pointer;
 
 	&:hover {
@@ -77,7 +91,7 @@
 }
 
 .side-nav__get {
-	font-size: 1.5rem;
+	font-size: rem(18px);
 	position: relative;
 	color: var(--colorDark);
 	font-weight: bold;
@@ -94,13 +108,23 @@
 
 .side-nav__toggle-button {
 	position: absolute;
-	top: 5%;
-	right: 120%;
+	left: -130px;
+	top: 42.5px;
 	width: 30px;
 	height: 30px;
-	transition: all 0.3s ease-out;
+	transition: all var(--transitionDuration) ease-out;
 	cursor: pointer;
 	--backgroundToggle: #fff;
+
+	@include max-breakpoint('medium') {
+		left: -80px;
+	}
+
+	@include max-breakpoint('xsmall') {
+		transition-delay: var(--transitionDuration);
+		left: -55px;
+		top: 33px;
+	}
 }
 
 .side-nav__toggle-button:hover {
@@ -137,26 +161,4 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%) rotate(-45deg);
-}
-
-@media screen and (max-width: 550px) {
-	.side-nav {
-		right: -300px;
-		width: 300px;
-	}
-
-	.side-nav__list {
-		left: 50px;
-	}
-}
-
-@media screen and (max-width: 470px) {
-	.side-nav {
-		right: -250px;
-		width: 250px;
-	}
-
-	.side-nav__list {
-		left: 25px;
-	}
 }

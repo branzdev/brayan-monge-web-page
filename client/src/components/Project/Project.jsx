@@ -16,7 +16,9 @@ export default function Project({
 	logos,
 	isGoingRight,
 	utility,
+	button,
 	website,
+	github,
 }) {
 	const pageVariants = {
 		initial: {
@@ -59,20 +61,25 @@ export default function Project({
 				<span className="project__utility">{utility}</span>
 			</h3>
 			<p className="project__text">{paragraph}</p>
-			<div className="project__button-container">
-				{website && (
-					<Button
-						className="button--secondary project__button"
-						text="Visit Website"
-						img={logoWorld}
-					/>
-				)}
-				<Button
-					className="button--secondary"
-					text="View on Github"
-					img={logoGitHub}
-				/>
-			</div>
+			{button && (
+				<div className="project__button-container">
+					{website && (
+						<Button
+							className="button--secondary project__button"
+							text="Visit Website"
+							img={logoWorld}
+						/>
+					)}
+					{github && (
+						<Button
+							className="button--secondary project__button  project__button--github"
+							text="View Github"
+							img={logoGitHub}
+						/>
+					)}
+				</div>
+			)}
+
 			<div className="project__logos">
 				{logos.map((value, index) => {
 					return (

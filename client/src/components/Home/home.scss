@@ -8,12 +8,13 @@
 	grid-template-columns: repeat(5, 1fr);
 	grid-template-rows: repeat(5, 1fr);
 	place-items: center;
-	left: 58%;
+	left: 55%;
 	width: 32%;
 
 	@include max-breakpoint(1650px) {
-		left: 62%;
+		left: 67%;
 		grid-template-columns: 1fr;
+		width: 15%;
 	}
 
 	@include max-breakpoint('xxlarge') {
@@ -24,6 +25,16 @@
 		top: 15%;
 		width: 65%;
 		transform: translateX(-50%);
+	}
+
+	@include max-breakpoint('medium') {
+		width: 100%;
+		padding: 0 50px;
+	}
+
+	@include max-breakpoint('xsmall') {
+		top: 9%;
+		padding: 0 25px;
 	}
 }
 
@@ -47,6 +58,18 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+
+		@include max-breakpoint('medium') {
+			font-size: rem(108px);
+		}
+
+		@include max-breakpoint('small') {
+			font-size: rem(90px);
+		}
+
+		@include max-breakpoint('xsmall') {
+			font-size: rem(72px);
+		}
 	}
 
 	&:nth-child(1) {
@@ -133,32 +156,41 @@
 		padding-top: 100px;
 	}
 
-	@include max-breakpoint('large') {
+	@include max-breakpoint('xlarge') {
 		flex-direction: column;
 		justify-content: center;
-		padding-top: 20%;
+		padding-top: 200px;
 	}
 
-	/* 	@include max-breakpoint(xlarge) {
-		padding: 200px 300px 100px 300px;
-	} */
+	@include max-breakpoint('medium') {
+		padding: 0;
+	}
 }
 
 .home__content {
 	padding-left: 150px;
+	position: relative;
 
-	@include max-breakpoint('large') {
-		padding: 0 100px;
+	@include max-breakpoint('xlarge') {
+		padding: 0 50px 0;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
-		margin-bottom: 50px;
+		text-align: center;
+	}
+
+	@include max-breakpoint('medium') {
+		padding: 200px 50px 0;
+	}
+
+	@include max-breakpoint('xsmall') {
+		padding: 35% 25px 0;
 	}
 }
 
 .home__header1 {
-	color: #fff;
+	color: var(--colorLight);
 	font: var(--fontHeader2);
 	margin: 10px 0;
 	letter-spacing: var(--mainLetterSpacing);
@@ -200,24 +232,25 @@
 	height: 3rem;
 	width: 3rem;
 	cursor: pointer;
-	color: #fff;
-	transition: all var(--animationDelay);
+	color: var(--colorLight);
+	transition: all var(--transitionDuration);
 }
 
 .home__social {
 	position: absolute;
 	right: 150px;
-	margin-left: 150px;
-	@include max-breakpoint('large') {
+
+	@include max-breakpoint('xlarge') {
 		position: relative;
 		right: unset;
+		margin-left: unset;
 	}
 }
 
 .home__social-list {
 	display: flex;
 	flex-direction: column;
-	@include max-breakpoint('large') {
+	@include max-breakpoint('xlarge') {
 		flex-direction: row;
 	}
 }
@@ -251,122 +284,13 @@
 }
 
 .home__button {
-	margin-top: 30px;
+	margin: 35px 0;
+
+	@media screen and (max-width: 320px) {
+		margin: 15px;
+	}
 }
 
 .home__button-link {
 	text-decoration: none;
-}
-
-@media screen and (max-width: 970px) {
-	.home {
-		padding: 300px 200px 100px 200px;
-	}
-}
-
-@media screen and (max-width: 930px) {
-	.home {
-		padding: 200px;
-	}
-}
-@media screen and (max-width: 850px) {
-	.home__social {
-		bottom: 50px;
-		left: 50%;
-		transform: translateX(-50%);
-	}
-	.home__social-list {
-		flex-direction: row;
-	}
-	.home {
-		padding: 100px 50px 100px 200px;
-	}
-}
-
-@media screen and (max-width: 700px) {
-	.home {
-		padding: 100px 25px 100px 200px;
-	}
-}
-
-@media screen and (max-width: 550px) {
-	.home__social {
-		position: relative;
-		width: 48px;
-	}
-	.home__social-list {
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-	}
-	.home__social-list-item-link {
-		border: none;
-		opacity: 0;
-		visibility: hidden;
-		bottom: -54rem;
-	}
-
-	.home__social-button.active {
-		.home__social-list-item-link {
-			position: relative;
-			border: var(--borderSize) solid #fff;
-			opacity: 1;
-			visibility: visible;
-			bottom: 0;
-			transition: 0.5s;
-		}
-		.home__social-button-icon {
-			color: var(--colorMain);
-		}
-		.home__social {
-			height: 300px;
-		}
-	}
-	.home {
-		padding: 100px 50px 100px 200px;
-		overflow: hidden;
-	}
-
-	.home__social-button {
-		width: 48px;
-		min-height: 350px;
-		display: flex;
-		align-items: flex-end;
-	}
-
-	.home__social-button-icon {
-		position: absolute;
-	}
-
-	.home.active {
-		transform: translateX(-300px);
-	}
-
-	.home__header1 {
-		font-size: 2.5rem;
-	}
-
-	.home__header2 {
-		font-size: 2rem;
-	}
-
-	.home__header1 span {
-		font-size: 2.5rem;
-	}
-}
-
-@media screen and (max-width: 470px) {
-	.home {
-		padding: 100px 50px 100px 160px;
-	}
-	.home.active {
-		transform: translateX(-250px);
-	}
-}
-
-@media screen and (max-width: 430px) {
-	.home {
-		padding: 300px 50px 100px 50px;
-		justify-content: center;
-	}
 }

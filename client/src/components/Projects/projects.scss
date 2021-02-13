@@ -18,21 +18,45 @@
 		position: absolute;
 		top: 50%;
 		z-index: 300;
-		justify-content: center;
-		align-items: center;
+		height: 48px;
+		width: 48px;
+
 		cursor: pointer;
 		border-radius: var(--borderRadius);
 		&:hover {
 			background-color: var(--colorMain);
 		}
+
+		@include max-breakpoint(350px) {
+			display: none;
+		}
 	}
 
 	.projects__leftArrow {
-		left: 10%;
+		left: 15%;
+
+		@include max-breakpoint('xlarge') {
+			left: 10%;
+		}
+		@include max-breakpoint('large') {
+			left: 5%;
+		}
+		@include max-breakpoint('medium') {
+			left: 13px;
+		}
 	}
 
 	.projects__rightArrow {
-		right: 10%;
+		right: 15%;
+		@include max-breakpoint('xlarge') {
+			right: 10%;
+		}
+		@include max-breakpoint('large') {
+			right: 5%;
+		}
+		@include max-breakpoint('medium') {
+			right: 13px;
+		}
 	}
 	.projects__leftArrow svg:hover,
 	.projects__rightArrow svg:hover {

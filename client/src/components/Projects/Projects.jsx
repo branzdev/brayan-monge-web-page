@@ -120,6 +120,8 @@ export default function Proyects() {
 									paragraph={projects[0].paragraph}
 									logos={projects[0].logos}
 									website
+									github
+									button
 								/>
 							</div>
 						</Route>
@@ -132,6 +134,8 @@ export default function Proyects() {
 								subTitle={projects[1].subTitle}
 								paragraph={projects[1].paragraph}
 								logos={projects[1].logos}
+								github
+								button
 							/>
 						</Route>
 						<Route path="/projects/2">
@@ -143,6 +147,8 @@ export default function Proyects() {
 								utility={projects[2].utility}
 								paragraph={projects[2].paragraph}
 								logos={projects[2].logos}
+								github
+								button
 							/>
 						</Route>
 						<Route path="/projects/3">

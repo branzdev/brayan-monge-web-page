@@ -11,6 +11,14 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	@include max-breakpoint('medium') {
+		padding: 15px 35px;
+	}
+
+	@include max-breakpoint('xsmall') {
+		padding: 15px 25px;
+	}
 }
 
 .button__image {
@@ -18,9 +26,16 @@
 	height: auto;
 	object-position: center;
 	margin-right: 10px;
+
+	@include max-breakpoint('xsmall') {
+		margin: 0;
+	}
 }
 
 .button__text {
+	@include max-breakpoint('xsmall') {
+		font-size: rem(14px);
+	}
 }
 
 .button--primary {
