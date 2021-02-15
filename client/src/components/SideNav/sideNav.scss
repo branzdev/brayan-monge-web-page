@@ -88,6 +88,10 @@
 	font-weight: 800;
 	padding: 25px 15px;
 	height: 100%;
+
+	@include max-breakpoint('xsmall') {
+		font: var(--fontMain);
+	}
 }
 
 .side-nav__get {

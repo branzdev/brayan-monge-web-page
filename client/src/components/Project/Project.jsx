@@ -44,6 +44,8 @@ export default function Project({
 		duration: 0.5,
 	};
 
+	const maxWidth = window.matchMedia('(min-width: 641px)');
+
 	return (
 		<motion.div
 			className="project"
@@ -66,15 +68,17 @@ export default function Project({
 					{website && (
 						<Button
 							className="button--secondary project__button"
-							text="Visit Website"
+							text={maxWidth.matches && 'Visit Website'}
 							img={logoWorld}
+							href={website}
 						/>
 					)}
 					{github && (
 						<Button
 							className="button--secondary project__button  project__button--github"
-							text="View Github"
+							text={maxWidth.matches && 'View on Github'}
 							img={logoGitHub}
+							href={github}
 						/>
 					)}
 				</div>

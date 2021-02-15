@@ -13,7 +13,6 @@ import logoGitHub from '../../img/github.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHashtag } from '@fortawesome/free-solid-svg-icons';
 //Components
-import ParticlesBackground from '../ParticlesBackground/ParticlesBackground';
 import Button from '../Button/Button';
 
 export default function Home() {
@@ -55,7 +54,6 @@ export default function Home() {
 	}, []);
 	return (
 		<>
-			<ParticlesBackground />
 			<div ref={homeRef} className="home">
 				<div className="home__title-container">
 					<div className="home__title">
@@ -93,7 +91,7 @@ export default function Home() {
 						and a software development passionate
 					</h3>
 					<Link className="home__button-link" to="/projects/0">
-						<Button className="button--secondary home__button" text="Projects">
+						<Button className="button--primary home__button" text="Projects">
 							Projects
 						</Button>
 					</Link>
@@ -108,96 +106,49 @@ export default function Home() {
 				>
 					<ul className="home__social-list">
 						<li className="home__social-list-item">
-							<a className="home__social-list-item-link" href="/">
-								<img
-									className="home__social-list-item-image"
-									src={logoFacebook}
-									alt="facebook"
-								></img>
-							</a>
-						</li>
-						<li className="home__social-list-item">
-							<a className="home__social-list-item-link" href="/">
+							<a
+								className="home__social-list-item-link"
+								target="_blank"
+								rel="noopener noreferrer"
+								href="https://www.instagram.com/bmongemendez/"
+							>
 								<img
 									className="home__social-list-item-image"
 									src={logoInstagram}
-									alt="instagram"
+									alt="Instagram"
 								></img>
 							</a>
 						</li>
 						<li className="home__social-list-item">
-							<a className="home__social-list-item-link" href="/">
+							<a
+								className="home__social-list-item-link"
+								target="_blank"
+								rel="noopener noreferrer"
+								href="https://www.linkedin.com/in/bmongemendez/"
+							>
 								<img
 									className="home__social-list-item-image"
 									src={logoLinkedin}
-									alt="linkedin"
+									alt="Linkedin"
 								></img>
 							</a>
 						</li>
 						<li className="home__social-list-item">
-							<a className="home__social-list-item-link" href="/">
+							<a
+								className="home__social-list-item-link"
+								target="_blank"
+								rel="noopener noreferrer"
+								href="https://github.com/bmongemendez"
+							>
 								<img
 									className="home__social-list-item-image"
 									src={logoGitHub}
-									alt="twitter"
+									alt="Github"
 								></img>
 							</a>
 						</li>
 					</ul>
 				</motion.nav>
-				<div
-					className={`home__social-button ${isButtonClicked && 'active'}`}
-					onClick=""
-				>
-					<nav className="home__social">
-						<ul className="home__social-list">
-							<li className="home__social-list-item">
-								<a className="home__social-list-item-link" href="/">
-									<img
-										className="home__social-list-item-image"
-										src={logoFacebook}
-										alt="facebook"
-									></img>
-								</a>
-							</li>
-							<li className="home__social-list-item">
-								<a className="home__social-list-item-link" href="/">
-									<img
-										className="home__social-list-item-image"
-										src={logoInstagram}
-										alt="instagram"
-									></img>
-								</a>
-							</li>
-							<li className="home__social-list-item">
-								<a className="home__social-list-item-link" href="/">
-									<img
-										className="home__social-list-item-image"
-										src={logoLinkedin}
-										alt="linkedin"
-									></img>
-								</a>
-							</li>
-							<li className="home__social-list-item">
-								<a className="home__social-list-item-link" href="/">
-									<img
-										className="home__social-list-item-image"
-										src={logoGitHub}
-										alt="twitter"
-									></img>
-								</a>
-							</li>
-						</ul>
-					</nav>
-					<div
-						className="home__social-button-icon"
-						onClick={() => {
-							setIsButtonClicked(!isButtonClicked);
-						}}
-					>
-						{element}
-					</div>
-				</div>
 			</div>
 		</>
 	);

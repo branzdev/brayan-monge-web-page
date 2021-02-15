@@ -12,28 +12,42 @@
 	width: 100%;
 	//background: rgba(255, 255, 255, 0.4);
 
-	.projects__leftArrow,
-	.projects__rightArrow {
-		display: flex;
+	.projects__rightArrow-container {
 		position: absolute;
-		top: 50%;
-		z-index: 300;
-		height: 48px;
 		width: 48px;
+		height: 48px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		right: 15%;
+		z-index: 5000;
 
-		cursor: pointer;
-		border-radius: var(--borderRadius);
-		&:hover {
-			background-color: var(--colorMain);
+		@include max-breakpoint('xlarge') {
+			right: 10%;
+		}
+		@include max-breakpoint('large') {
+			right: 5%;
+		}
+		@include max-breakpoint('medium') {
+			right: 13px;
 		}
 
-		@include max-breakpoint(350px) {
-			display: none;
+		@include max-breakpoint('xsmall') {
+			top: 0;
+			right: 0;
+			height: 100vh;
 		}
 	}
 
-	.projects__leftArrow {
+	.projects__leftArrow-container {
+		position: absolute;
+		width: 48px;
+		height: 48px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		left: 15%;
+		z-index: 5000;
 
 		@include max-breakpoint('xlarge') {
 			left: 10%;
@@ -44,20 +58,42 @@
 		@include max-breakpoint('medium') {
 			left: 13px;
 		}
+		@include max-breakpoint('xsmall') {
+			top: 0;
+			left: 0;
+			height: 100vh;
+		}
 	}
 
+	.projects__leftArrow,
 	.projects__rightArrow {
-		right: 15%;
-		@include max-breakpoint('xlarge') {
-			right: 10%;
+		display: flex;
+		position: absolute;
+		z-index: 300;
+		height: 48px;
+		width: 48px;
+		cursor: pointer;
+		border-radius: var(--borderRadius);
+
+		svg {
+			height: 100%;
+			width: 100%;
 		}
-		@include max-breakpoint('large') {
-			right: 5%;
+
+		&:hover {
+			background-color: var(--colorMain);
 		}
-		@include max-breakpoint('medium') {
-			right: 13px;
+
+		@include max-breakpoint('xsmall') {
+			height: 24px;
+			width: 24px;
+		}
+
+		@include max-breakpoint(350px) {
+			display: none;
 		}
 	}
+
 	.projects__leftArrow svg:hover,
 	.projects__rightArrow svg:hover {
 		filter: invert(1);

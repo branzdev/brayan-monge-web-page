@@ -11,6 +11,9 @@
 	align-items: center;
 	z-index: 1000;
 	transition: all var(--transitionDuration) ease-out;
+	margin-bottom: 100px;
+
+	@extend %disable-select;
 
 	@include max-breakpoint('medium') {
 		padding: 0 50px;

@@ -14,6 +14,8 @@ export default function ContactForm() {
 		out: { y: '-100vh', x: '-50%', opacity: 0 },
 	};
 
+	const [isInputActive, setIsInputActive] = useState('');
+
 	const pageTransitions = {
 		duration: 0.5,
 	};
@@ -163,11 +165,15 @@ export default function ContactForm() {
 		}
 	};
 
-	const handleOnFocus = (input) => {
+	const maxWidth = window.matchMedia('(max-width: 640px)');
+
+	const handleOnFocus = (input, e) => {
 		setInputActive((prevstate) => ({
 			...prevstate,
 			[input]: 'active',
 		}));
+
+		maxWidth.matches && setIsInputActive('activeMobile');
 	};
 
 	const handleOnChange = (e) => {
@@ -186,6 +192,7 @@ export default function ContactForm() {
 				...prevstate,
 				[name]: '',
 			}));
+		maxWidth.matches && setIsInputActive('');
 	};
 
 	return (
@@ -195,7 +202,7 @@ export default function ContactForm() {
 			exit="out"
 			variants={pageVariantsContent}
 			transition={pageTransitions}
-			className="contact-form"
+			className={`contact-form ${isInputActive}`}
 			onSubmit={handleSubmit}
 		>
 			<label
@@ -279,7 +286,7 @@ export default function ContactForm() {
 				/>
 			</div>
 			<Button
-				className="button--primary contact-form__submit"
+				className={`button--primary contact-form__submit ${isInputActive}`}
 				text="Send Message"
 				onClick={handleSubmit}
 			/>

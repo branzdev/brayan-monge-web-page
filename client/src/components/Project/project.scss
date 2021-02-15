@@ -15,7 +15,7 @@
 	@extend %disable-select;
 
 	@include max-breakpoint('medium') {
-		padding: 100px 50px 0;
+		padding: 100px 100px;
 	}
 
 	@include max-breakpoint('xsmall') {
@@ -87,6 +87,7 @@
 
 	@include max-breakpoint('medium') {
 		flex-direction: row;
+		margin-top: 25px;
 	}
 
 	@include max-breakpoint('xsmall') {
@@ -106,7 +107,7 @@
 		max-width: 100%;
 	}
 
-	@include max-breakpoint('xsmall') {
+	@include max-breakpoint('medium') {
 		padding-top: 25px;
 	}
 }
@@ -122,6 +123,7 @@
 	@include max-breakpoint('medium') {
 		margin-right: 15px;
 		margin-bottom: 0;
+		padding: 10px 20px;
 	}
 }
 
@@ -136,13 +138,15 @@
 	align-items: center;
 	max-width: 100%;
 	height: auto;
+	flex-wrap: wrap;
 	margin-top: 75px;
 
 	@include max-breakpoint('large') {
-		margin-top: 25px;
+		margin-top: 50px;
 	}
-	@include max-breakpoint('xsmall') {
-		flex-wrap: wrap;
+
+	@include max-breakpoint('medium') {
+		margin-top: 25px;
 	}
 
 	@include max-breakpoint(350px) {
@@ -161,7 +165,7 @@
 	}
 
 	@include max-breakpoint('xsmall') {
-		margin-top: 15px;
+		margin: 0 10px;
 	}
 }
 

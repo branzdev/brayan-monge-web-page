@@ -8,9 +8,10 @@
 	outline: none;
 	letter-spacing: 3px;
 	padding: 20px 40px;
-	display: flex;
+	display: inline-flex;
 	justify-content: center;
 	align-items: center;
+	@extend %disable-select;
 
 	@include max-breakpoint('medium') {
 		padding: 15px 35px;
@@ -33,6 +34,7 @@
 }
 
 .button__text {
+	font-weight: bold;
 	@include max-breakpoint('xsmall') {
 		font-size: rem(14px);
 	}
@@ -42,6 +44,9 @@
 	border: none;
 	color: var(--colorDark);
 	background: var(--colorMain);
+
+	&:hover {
+	}
 }
 
 .button--secondary {

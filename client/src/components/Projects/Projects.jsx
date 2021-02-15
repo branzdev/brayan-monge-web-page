@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 //Styles
 import './projects.scss';
 //Components
-import ParticlesBackground from '../ParticlesBackground/ParticlesBackground';
 import Project from '../Project/Project';
 //Logos
 import logoHTML5 from '../../img/HTML5.svg';
@@ -41,17 +40,17 @@ export default function Proyects() {
 		},
 		{
 			title: 'Turn ',
-			titleSpan: 'The Jump',
+			titleSpan: 'The Jump!',
 			subTitle: 'Videogame',
 			utility: '(WIP)',
 			paragraph: 'I am building my own 2D game inspired by "Doddle Jump"',
 			logos: [logoUnity, logoCSharp],
 		},
 		{
-			title: 'And a lot of',
-			titleSpan: 'Coming Projects',
+			title: 'And more',
+			titleSpan: 'Projects',
 			subTitle: 'On the way!',
-			paragraph: `I'm constantly learning and practicing new skills everyday, so im constantly making new personal projects :)`,
+			paragraph: `I'm constantly learning and practicing new skills everyday :)`,
 			logos: [
 				logoHTML5,
 				logoCSS3,
@@ -89,24 +88,25 @@ export default function Proyects() {
 	};
 	return (
 		<>
-			<ParticlesBackground />
 			<div className="projects">
 				<motion.div
 					whileTap={{ scale: 0.9 }}
+					className="projects__leftArrow-container"
 					onClick={handleLeftClick}
-					className="projects__leftArrow"
 				>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						width="48"
-						height="48"
-						viewBox="0 0 48 48"
-					>
-						<title>ic_keyboard_arrow_left_48px</title>
-						<g fill="#ffffff">
-							<path d="M30.83 32.67l-9.17-9.17 9.17-9.17L28 11.5l-12 12 12 12z"></path>
-						</g>
-					</svg>
+					<div className="projects__leftArrow">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="48"
+							height="48"
+							viewBox="0 0 48 48"
+						>
+							<title>ic_keyboard_arrow_left_48px</title>
+							<g fill="#ffffff">
+								<path d="M30.83 32.67l-9.17-9.17 9.17-9.17L28 11.5l-12 12 12 12z"></path>
+							</g>
+						</svg>
+					</div>
 				</motion.div>
 				<AnimatePresence>
 					<Switch location={location} key={location.pathname}>
@@ -119,8 +119,8 @@ export default function Proyects() {
 									subTitle={projects[0].subTitle}
 									paragraph={projects[0].paragraph}
 									logos={projects[0].logos}
-									website
-									github
+									website="https://jmendezconstructorasa.com"
+									github="https://github.com/bmongemendez/JM-Constructora"
 									button
 								/>
 							</div>
@@ -134,7 +134,7 @@ export default function Proyects() {
 								subTitle={projects[1].subTitle}
 								paragraph={projects[1].paragraph}
 								logos={projects[1].logos}
-								github
+								github="https://github.com/bmongemendez/brayan-monge-web-page"
 								button
 							/>
 						</Route>
@@ -147,7 +147,7 @@ export default function Proyects() {
 								utility={projects[2].utility}
 								paragraph={projects[2].paragraph}
 								logos={projects[2].logos}
-								github
+								github="https://github.com/bmongemendez/TurnTheJump"
 								button
 							/>
 						</Route>
@@ -159,27 +159,32 @@ export default function Proyects() {
 								subTitle={projects[3].subTitle}
 								paragraph={projects[3].paragraph}
 								logos={projects[3].logos}
+								button
+								github="https://github.com/bmongemendez"
 							/>
 						</Route>
 					</Switch>
 				</AnimatePresence>
 				<motion.div
 					whileTap={{ scale: 0.9 }}
+					className="projects__rightArrow-container"
 					onClick={handleRightClick}
-					className="projects__rightArrow"
 				>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						width="48"
-						height="48"
-						viewBox="0 0 48 48"
-					>
-						<title>ic_keyboard_arrow_right_48px</title>
-						<g fill="#ffffff">
-							<path d="M17.17 32.92l9.17-9.17-9.17-9.17L20 11.75l12 12-12 12z"></path>
-						</g>
-					</svg>
+					<div className="projects__rightArrow">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="48"
+							height="48"
+							viewBox="0 0 48 48"
+						>
+							<title>ic_keyboard_arrow_right_48px</title>
+							<g fill="#ffffff">
+								<path d="M17.17 32.92l9.17-9.17-9.17-9.17L20 11.75l12 12-12 12z"></path>
+							</g>
+						</svg>
+					</div>
 				</motion.div>
+
 				<div className="projects__current">
 					{projects.map((value, index) => {
 						return (

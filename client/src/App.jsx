@@ -6,10 +6,12 @@ import Projects from './components/Projects/Projects';
 import Contact from './components/Contact/Contact';
 import Header from './components/Header/Header';
 import SideNav from './components/SideNav/SideNav';
+import ParticlesBackground from './components/ParticlesBackground/ParticlesBackground';
 
 function App() {
 	return (
 		<Router>
+			<ParticlesBackground />
 			<Header />
 			<Route exact path="/">
 				<Home />
