@@ -39,6 +39,14 @@ export default function Proyects() {
 			logos: [logoHTML5, logoSass, logoNodeJS, logoReactJS, logoExpressJS],
 		},
 		{
+			title: 'Another Version',
+			titleSpan: 'of My Portfolio',
+			subTitle: 'Web Page',
+			paragraph:
+				'Creation of my portfolio with another design and structure with plain HTML, CSS and JavaScript',
+			logos: [logoHTML5, logoCSS3, logoJS],
+		},
+		{
 			title: 'Turn ',
 			titleSpan: 'The Jump!',
 			subTitle: 'Videogame',
@@ -51,15 +59,7 @@ export default function Proyects() {
 			titleSpan: 'Projects',
 			subTitle: 'On the way!',
 			paragraph: `I'm constantly learning and practicing new skills everyday :)`,
-			logos: [
-				logoHTML5,
-				logoCSS3,
-				logoJS,
-				logoMongoDB,
-				logoExpressJS,
-				logoReactJS,
-				logoNodeJS,
-			],
+			logos: [logoHTML5, logoCSS3, logoJS, logoMongoDB, logoExpressJS, logoReactJS, logoNodeJS],
 		},
 	]);
 	const [currentProject, setCurrentProject] = useState(0);
@@ -77,8 +77,7 @@ export default function Proyects() {
 		setIsGoingRight(false);
 	};
 	const handleRightClick = () => {
-		currentProject < projects.length - 1 &&
-			setCurrentProject((prevState) => prevState + 1);
+		currentProject < projects.length - 1 && setCurrentProject((prevState) => prevState + 1);
 		setIsGoingRight(true);
 	};
 
@@ -95,13 +94,8 @@ export default function Proyects() {
 					onClick={handleLeftClick}
 				>
 					<div className="projects__leftArrow">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="48"
-							height="48"
-							viewBox="0 0 48 48"
-						>
-							<title>ic_keyboard_arrow_left_48px</title>
+						<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+							<title>Go Left</title>
 							<g fill="#ffffff">
 								<path d="M30.83 32.67l-9.17-9.17 9.17-9.17L28 11.5l-12 12 12 12z"></path>
 							</g>
@@ -119,7 +113,7 @@ export default function Proyects() {
 									subTitle={projects[0].subTitle}
 									paragraph={projects[0].paragraph}
 									logos={projects[0].logos}
-									website="https://jmendezconstructorasa.com"
+									website="https://jmendezconstructorasa.herokuapp.com"
 									github="https://github.com/bmongemendez/JM-Constructora"
 									button
 								/>
@@ -143,12 +137,38 @@ export default function Proyects() {
 								isGoingRight={isGoingRight}
 								title={projects[2].title}
 								titleSpan={projects[2].titleSpan}
-								subTitle={projects[2].subTitle}
 								utility={projects[2].utility}
+								subTitle={projects[2].subTitle}
 								paragraph={projects[2].paragraph}
 								logos={projects[2].logos}
+								github="https://github.com/bmongemendez/personal-portfolio-webpage-fcc"
+								website="https://codepen.io/bmongemendez/full/abyOBeq"
+								button
+							/>
+						</Route>
+						<Route path="/projects/3">
+							<Project
+								isGoingRight={isGoingRight}
+								title={projects[3].title}
+								titleSpan={projects[3].titleSpan}
+								subTitle={projects[3].subTitle}
+								utility={projects[3].utility}
+								paragraph={projects[3].paragraph}
+								logos={projects[3].logos}
 								github="https://github.com/bmongemendez/TurnTheJump"
 								button
+							/>
+						</Route>
+						<Route path="/projects/4">
+							<Project
+								isGoingRight={isGoingRight}
+								title={projects[4].title}
+								titleSpan={projects[4].titleSpan}
+								subTitle={projects[4].subTitle}
+								paragraph={projects[4].paragraph}
+								logos={projects[4].logos}
+								button
+								github="https://github.com/bmongemendez"
 							/>
 						</Route>
 						<Route path="/projects/3">
@@ -171,13 +191,8 @@ export default function Proyects() {
 					onClick={handleRightClick}
 				>
 					<div className="projects__rightArrow">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="48"
-							height="48"
-							viewBox="0 0 48 48"
-						>
-							<title>ic_keyboard_arrow_right_48px</title>
+						<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+							<title>Go Right</title>
 							<g fill="#ffffff">
 								<path d="M17.17 32.92l9.17-9.17-9.17-9.17L20 11.75l12 12-12 12z"></path>
 							</g>

@@ -57,4 +57,10 @@
 		color: var(--colorDark);
 		background: var(--colorMain);
 	}
+
+	&:hover {
+		img {
+			filter: brightness(0);
+		}
+	}
 }

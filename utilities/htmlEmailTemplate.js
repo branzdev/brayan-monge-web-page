@@ -137,7 +137,7 @@ function htmlEmailTemplate(name, email, subject, message) {
 								</td>
 							</tr>
 							<tr>
-								<td style="font-size: 18px; padding: 25px 15px">
+								<td style="font-size: 18px; padding-top: 15px; padding-bottom: 15px; padding-left: 15px; padding-right: 15px">
 									<table
 										border="0"
 										cellpadding="0"
@@ -148,10 +148,13 @@ function htmlEmailTemplate(name, email, subject, message) {
 										<tr>
 											<td style="padding: 0">
 												<p style="margin: 0; padding: 10px 0">
-													&bull; Nombre: ${name}
+													&bull; Name: ${name}
 												</p>
 												<p style="margin: 0; padding: 10px 0">
-													&bull; Coreo: ${email}
+													&bull; Email: ${email}
+												</p>
+												<p style="margin: 0; padding: 10px 0">
+													&bull; Subject: ${subject}
 												</p>
 											</td>
 										</tr>
@@ -162,7 +165,7 @@ function htmlEmailTemplate(name, email, subject, message) {
 								<td
 									align="center"
 									valign="center"
-									style="font-size: 18px; padding: 0 15px; width: 100%;"
+									style="font-size: 18px; padding-top: 15px; padding-bottom: 15px; padding-left: 15px; padding-right: 15px; width: 100%"
 								>
 									<p
 										style="
@@ -184,7 +187,7 @@ function htmlEmailTemplate(name, email, subject, message) {
 								<td
 									align="center"
 									valign="center"
-									style="padding: 0 15px; font-size: 18px"
+									style="padding: padding-top: 0; padding-bottom: 0; padding-left: 15px; padding-right: 15px; font-size: 18px"
 								>
 									<a
 										href="mailto:${email}"
@@ -204,7 +207,7 @@ function htmlEmailTemplate(name, email, subject, message) {
 											
 										"
 									>
-										Responder
+										Send Message (not reply)
 									</a>
 								</td>
 							</tr>

@@ -13,7 +13,7 @@ router.post('/', async function (req, res, next) {
 	const msg = {
 		to: process.env.EMAIL_DESTINATION, // Change to your recipient
 		from: process.env.EMAIL_SENDER, // Change to your verified sender
-		subject: subject,
+		subject: `EMAIL FROM PERSONAL WEBSITE: ${subject}`,
 		// text: '',
 		html: htmlBody,
 	};
@@ -21,13 +21,11 @@ router.post('/', async function (req, res, next) {
 	sgMail
 		.send(msg)
 		.then(() => {
-			console.log('Email sent');
 			res.json({
 				status: 'success',
 			});
 		})
 		.catch((error) => {
-			console.error(error);
 			res.json({
 				status: 'fail',
 			});

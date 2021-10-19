@@ -46,12 +46,7 @@ export default function ContactForm() {
 
 	const [inputActive, setInputActive] = useState(defaultInputActive);
 
-	const {
-		nameRequired,
-		emailRequired,
-		subjectRequired,
-		messageRequired,
-	} = isRequired;
+	const { nameRequired, emailRequired, subjectRequired, messageRequired } = isRequired;
 
 	const { name, email, subject, message } = formData;
 
@@ -91,8 +86,7 @@ export default function ContactForm() {
 					if (response.data.status === 'success') {
 						Swal.fire({
 							title: 'Thank you!',
-							text:
-								"The message has been sent, I'll write you back as soon as I can :)",
+							text: "Your message has been sent successfully, I'll write you back as soon as I can :)",
 							icon: 'success',
 							//timer: 3000,
 							customClass: {
@@ -125,8 +119,7 @@ export default function ContactForm() {
 						// network error
 						Swal.fire({
 							title: 'Conection error',
-							text:
-								"It looks like there's a connection error, please try again :(",
+							text: "It looks like there's a connection error, please try again :(",
 							icon: 'error',
 							toast: true,
 							position: 'bottom',
@@ -207,9 +200,7 @@ export default function ContactForm() {
 		>
 			<label
 				for="inputName"
-				className={`contact-form__label ${nameRequired} ${
-					inputActive.name && 'active'
-				} `}
+				className={`contact-form__label ${nameRequired} ${inputActive.name && 'active'} `}
 			>
 				Name
 			</label>
@@ -227,9 +218,7 @@ export default function ContactForm() {
 			</div>
 			<label
 				for="inputEmail"
-				className={`contact-form__label ${emailRequired} ${
-					inputActive.email && 'active'
-				}`}
+				className={`contact-form__label ${emailRequired} ${inputActive.email && 'active'}`}
 			>
 				Email
 			</label>
@@ -247,9 +236,7 @@ export default function ContactForm() {
 			</div>
 			<label
 				for="inputSubject"
-				className={`contact-form__label ${subjectRequired} ${
-					inputActive.subject && 'active'
-				}`}
+				className={`contact-form__label ${subjectRequired} ${inputActive.subject && 'active'}`}
 			>
 				Subject
 			</label>
@@ -267,9 +254,7 @@ export default function ContactForm() {
 			</div>
 			<label
 				for="inputMessage"
-				className={`contact-form__label ${messageRequired} ${
-					inputActive.message && 'active'
-				}`}
+				className={`contact-form__label ${messageRequired} ${inputActive.message && 'active'}`}
 			>
 				Message
 			</label>

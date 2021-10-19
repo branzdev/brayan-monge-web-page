@@ -305,6 +305,10 @@
 
 .home__social-list-item-link:hover {
 	background: var(--colorMain);
+
+	.home__social-list-item-image {
+		filter: brightness(0);
+	}
 }
 
 .home__social-list-item-image {
@@ -315,7 +319,6 @@
 	-webkit-filter: invert(1);
 	padding: 7px;
 	filter: invert(1);
-	mix-blend-mode: difference;
 
 	@include max-breakpoint('xsmall') {
 		padding: 0;

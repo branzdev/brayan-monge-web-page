@@ -1,24 +1,17 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 //Styles
 import './home.scss';
 //Logos
-import logoFacebook from '../../img/facebook.svg';
-import logoInstagram from '../../img/instagram.svg';
+import logoCodePen from '../../img/Codepen.svg';
 import logoLinkedin from '../../img/linkedin.svg';
 import logoGitHub from '../../img/github.svg';
-//FontAwesome
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHashtag } from '@fortawesome/free-solid-svg-icons';
 //Components
 import Button from '../Button/Button';
 
 export default function Home() {
-	const [isButtonClicked, setIsButtonClicked] = useState(false);
-	const element = <FontAwesomeIcon icon={faHashtag} />;
-
 	const pageVariantsContent = {
 		initial: { y: '100vh', opacity: 0 },
 		in: { y: '0', opacity: 1 },
@@ -87,9 +80,7 @@ export default function Home() {
 						My name is<span> Brayan </span>
 					</h2>
 					<h2 className="home__header1">I'm a Systems Engineering Student</h2>
-					<h3 className="home__header2">
-						and a software development passionate
-					</h3>
+					<h3 className="home__header2">and a software development passionate</h3>
 					<Link className="home__button-link" to="/projects/0">
 						<Button className="button--primary home__button" text="Projects">
 							Projects
@@ -107,20 +98,22 @@ export default function Home() {
 					<ul className="home__social-list">
 						<li className="home__social-list-item">
 							<a
+								title="CodePen"
 								className="home__social-list-item-link"
 								target="_blank"
 								rel="noopener noreferrer"
-								href="https://www.instagram.com/bmongemendez/"
+								href="https://codepen.io/bmongemendez"
 							>
 								<img
 									className="home__social-list-item-image"
-									src={logoInstagram}
+									src={logoCodePen}
 									alt="Instagram"
 								></img>
 							</a>
 						</li>
 						<li className="home__social-list-item">
 							<a
+								title="LinkedIn"
 								className="home__social-list-item-link"
 								target="_blank"
 								rel="noopener noreferrer"
@@ -135,16 +128,13 @@ export default function Home() {
 						</li>
 						<li className="home__social-list-item">
 							<a
+								title="GitHub"
 								className="home__social-list-item-link"
 								target="_blank"
 								rel="noopener noreferrer"
 								href="https://github.com/bmongemendez"
 							>
-								<img
-									className="home__social-list-item-image"
-									src={logoGitHub}
-									alt="Github"
-								></img>
+								<img className="home__social-list-item-image" src={logoGitHub} alt="Github"></img>
 							</a>
 						</li>
 					</ul>
