@@ -14,20 +14,21 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'client/build')));
-
-if (process.env.NODE_ENV !== 'development') {
-	function requireHTTPS(req, res, next) {
-		if (!req.secure && req.get('x-forwarded-proto') !== 'https') {
-			return res.redirect('https://' + req.get('host') + req.url);
-		}
-		next();
-	}
-}
-
-app.use(requireHTTPS);
 
 app.use('*', defaultRouter);
+
+app.use((req, res, next) => {
+	if (/(.ico|.js|.css|.jpg|.png|.map|.svg)$/i.test(req.path)) {
+		next();
+	} else {
+		res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+		res.header('Expires', '-1');
+		res.header('Pragma', 'no-cache');
+		res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+	}
+});
+app.use(express.static(path.join(__dirname, 'client', 'build')));
+
 app.use('/api/sendMail', sendMailRouter);
 
 // catch 404 and forward to error handler
