@@ -199,7 +199,7 @@ export default function ContactForm() {
 			onSubmit={handleSubmit}
 		>
 			<label
-				for="inputName"
+				htmlFor="inputName"
 				className={`contact-form__label ${nameRequired} ${inputActive.name && 'active'} `}
 			>
 				Name
@@ -217,7 +217,7 @@ export default function ContactForm() {
 				/>
 			</div>
 			<label
-				for="inputEmail"
+				htmlFor="inputEmail"
 				className={`contact-form__label ${emailRequired} ${inputActive.email && 'active'}`}
 			>
 				Email
@@ -235,7 +235,7 @@ export default function ContactForm() {
 				/>
 			</div>
 			<label
-				for="inputSubject"
+				htmlFor="inputSubject"
 				className={`contact-form__label ${subjectRequired} ${inputActive.subject && 'active'}`}
 			>
 				Subject
@@ -253,7 +253,7 @@ export default function ContactForm() {
 				/>
 			</div>
 			<label
-				for="inputMessage"
+				htmlFor="inputMessage"
 				className={`contact-form__label ${messageRequired} ${inputActive.message && 'active'}`}
 			>
 				Message

@@ -79,8 +79,8 @@ export default function Home() {
 					<h2 className="home__header1">
 						My name is<span> Brayan </span>
 					</h2>
-					<h2 className="home__header1">I'm a Systems Engineering Student</h2>
-					<h3 className="home__header2">and a software development passionate</h3>
+					<h2 className="home__header1">I'm a Computer Systems Engineer</h2>
+					<h3 className="home__header2">Passionate about software development</h3>
 					<Link className="home__button-link" to="/projects/0">
 						<Button className="button--primary home__button" text="Projects">
 							Projects

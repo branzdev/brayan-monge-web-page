@@ -1,19 +1,23 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 const dotenv = require('dotenv').config({ path: __dirname + '/.env' });
 
-var sendMailRouter = require('./routes/sendMail');
-let defaultRouter = require('./routes/default');
+const sendMailRouter = require('./routes/sendMail');
+const defaultRouter = require('./routes/default');
+const downloadResumeRouter = require('./routes/downloadResume');
 
-var app = express();
+const app = express();
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+app.use('/api/sendMail', sendMailRouter);
+app.use('/api/download-resume', downloadResumeRouter);
 
 app.use('*', defaultRouter);
 
@@ -29,8 +33,6 @@ app.use((req, res, next) => {
 });
 
 app.use(express.static(path.join(__dirname, 'client', 'build')));
-
-app.use('/api/sendMail', sendMailRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
