@@ -1,26 +1,26 @@
 {
-	"name": "brayan-monge-web-page",
-	"version": "0.0.0",
-	"private": true,
-	"scripts": {
-		"client": "cd ./client && yarn start",
-		"server": "cd ./bin && nodemon www",
-		"dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
-		"start": "cd ./bin && node www",
-		"heroku-postbuild": "cd client && yarn install && yarn build"
-	},
-	"dependencies": {
-		"@sendgrid/mail": "^7.7.0",
-		"concurrently": "^8.2.0",
-		"cookie-parser": "~1.4.6",
-		"cors": "^2.8.5",
-		"debug": "~4.3.4",
-		"dotenv": "^16.3.1",
-		"express": "~4.18.2",
-		"http-errors": "~2.0.0",
-		"jade": "~1.11.0",
-		"morgan": "~1.10.0",
-		"nodemailer": "^6.9.4",
-		"nodemon": "^3.0.1"
-	}
+  "name": "brayan-monge-web-page",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "client": "cd ./client && yarn start",
+    "server": "cd ./bin && nodemon www",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "start": "cd ./bin && node www",
+    "heroku-postbuild": "cd client && yarn install && yarn build"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
+    "concurrently": "^8.2.0",
+    "cookie-parser": "~1.4.6",
+    "cors": "^2.8.5",
+    "debug": "~4.3.4",
+    "dotenv": "^16.3.1",
+    "express": "~4.18.2",
+    "http-errors": "~2.0.0",
+    "jade": "~1.11.0",
+    "morgan": "~1.10.0",
+    "nodemailer": "^6.9.4",
+    "nodemon": "^3.0.1"
+  }
 }

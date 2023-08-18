@@ -1,175 +1,175 @@
-@import '../../styles//index.scss';
+@import "../../styles//index.scss";
 
 .project {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
 
-	@extend %disable-select;
+  @extend %disable-select;
 
-	@include max-breakpoint('medium') {
-		padding: 100px 100px;
-	}
+  @include max-breakpoint("medium") {
+    padding: 100px 100px;
+  }
 
-	@include max-breakpoint('xsmall') {
-		padding: 100px 25px 100px;
-	}
+  @include max-breakpoint("xsmall") {
+    padding: 100px 25px 100px;
+  }
 
-	@include max-breakpoint(350px) {
-		padding: 0 25px 0;
-	}
+  @include max-breakpoint(350px) {
+    padding: 0 25px 0;
+  }
 }
 
 .project__header1 {
-	color: var(--colorLight);
-	font-size: (72px);
+  color: var(--colorLight);
+  font-size: (72px);
 
-	@include max-breakpoint('large') {
-		font: var(--fontHeader2);
-	}
+  @include max-breakpoint("large") {
+    font: var(--fontHeader2);
+  }
 }
 
 .project__span {
-	color: var(--colorMain);
-	font: var(--fontHeader2);
-	font-size: (72px);
-	@include max-breakpoint('large') {
-		font: var(--fontHeader2);
-	}
+  color: var(--colorMain);
+  font: var(--fontHeader2);
+  font-size: (72px);
+  @include max-breakpoint("large") {
+    font: var(--fontHeader2);
+  }
 }
 
 .project__header2 {
-	font-size: rem(54px);
-	color: var(--colorLight);
-	display: inline-block;
-	position: relative;
-	@include max-breakpoint('large') {
-		font: var(--fontHeader3);
-	}
+  font-size: toRem(54px);
+  color: var(--colorLight);
+  display: inline-block;
+  position: relative;
+  @include max-breakpoint("large") {
+    font: var(--fontHeader3);
+  }
 }
 
 .project__utility {
-	color: var(--colorMain);
-	font: var(--fontMain);
-	position: absolute;
-	top: 15px;
-	padding-left: 10px;
+  color: var(--colorMain);
+  font: var(--fontMain);
+  position: absolute;
+  top: 15px;
+  padding-left: 10px;
 
-	@include max-breakpoint('large') {
-		top: 5px;
-	}
+  @include max-breakpoint("large") {
+    top: 5px;
+  }
 
-	@include max-breakpoint('medium') {
-		font-size: rem(14px);
-		top: 5px;
-	}
+  @include max-breakpoint("medium") {
+    font-size: toRem(14px);
+    top: 5px;
+  }
 }
 
 .project__button-container {
-	display: flex;
-	margin-top: 75px;
+  display: flex;
+  margin-top: 75px;
 
-	@include max-breakpoint('large') {
-		margin-top: 50px;
-	}
+  @include max-breakpoint("large") {
+    margin-top: 50px;
+  }
 
-	@include max-breakpoint('medium') {
-		flex-direction: column;
-		align-items: center;
-	}
+  @include max-breakpoint("medium") {
+    flex-direction: column;
+    align-items: center;
+  }
 
-	@include max-breakpoint('medium') {
-		flex-direction: row;
-		margin-top: 25px;
-	}
+  @include max-breakpoint("medium") {
+    flex-direction: row;
+    margin-top: 25px;
+  }
 
-	@include max-breakpoint('xsmall') {
-		margin-top: 25px;
-	}
+  @include max-breakpoint("xsmall") {
+    margin-top: 25px;
+  }
 }
 
 .project__text {
-	padding-top: rem(50px);
-	max-width: 55%;
-	color: var(--colorLight);
-	font-size: rem(27px);
-	text-align: center;
+  padding-top: toRem(50px);
+  max-width: 55%;
+  color: var(--colorLight);
+  font-size: toRem(27px);
+  text-align: center;
 
-	@include max-breakpoint('medium') {
-		font: var(--fontMain);
-		max-width: 100%;
-	}
+  @include max-breakpoint("medium") {
+    font: var(--fontMain);
+    max-width: 100%;
+  }
 
-	@include max-breakpoint('medium') {
-		padding-top: 25px;
-	}
+  @include max-breakpoint("medium") {
+    padding-top: 25px;
+  }
 }
 
 .project__button {
-	margin-right: 50px;
+  margin-right: 50px;
 
-	@include max-breakpoint('medium') {
-		margin: 0;
-		margin-bottom: 50px;
-	}
+  @include max-breakpoint("medium") {
+    margin: 0;
+    margin-bottom: 50px;
+  }
 
-	@include max-breakpoint('medium') {
-		margin-right: 15px;
-		margin-bottom: 0;
-		padding: 10px 20px;
-	}
+  @include max-breakpoint("medium") {
+    margin-right: 15px;
+    margin-bottom: 0;
+    padding: 10px 20px;
+  }
 }
 
 .project__button--github {
-	margin-right: 0;
-	margin-bottom: 0;
+  margin-right: 0;
+  margin-bottom: 0;
 }
 
 .project__logos {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	max-width: 100%;
-	height: auto;
-	flex-wrap: wrap;
-	margin-top: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  height: auto;
+  flex-wrap: wrap;
+  margin-top: 75px;
 
-	@include max-breakpoint('large') {
-		margin-top: 50px;
-	}
+  @include max-breakpoint("large") {
+    margin-top: 50px;
+  }
 
-	@include max-breakpoint('medium') {
-		margin-top: 25px;
-	}
+  @include max-breakpoint("medium") {
+    margin-top: 25px;
+  }
 
-	@include max-breakpoint(350px) {
-		display: none;
-	}
+  @include max-breakpoint(350px) {
+    display: none;
+  }
 }
 
 .project__logo {
-	margin: 0 15px;
-	height: 75px;
-	width: 75px;
+  margin: 0 15px;
+  height: 75px;
+  width: 75px;
 
-	@include max-breakpoint('medium') {
-		height: 50px;
-		width: 50px;
-	}
+  @include max-breakpoint("medium") {
+    height: 50px;
+    width: 50px;
+  }
 
-	@include max-breakpoint('xsmall') {
-		margin: 0 10px;
-	}
+  @include max-breakpoint("xsmall") {
+    margin: 0 10px;
+  }
 }
 
 .project__logo.hovered {
-	position: absolute;
-	transform: scale(2);
+  position: absolute;
+  transform: scale(2);
 }

@@ -1,66 +1,66 @@
-@import '../../styles/index';
+@import "../../styles/index";
 
 .button {
-	border-radius: var(--borderRadius);
-	text-transform: uppercase;
-	background: none;
-	cursor: pointer;
-	outline: none;
-	letter-spacing: 3px;
-	padding: 20px 40px;
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	@extend %disable-select;
+  border-radius: var(--borderRadius);
+  text-transform: uppercase;
+  background: none;
+  cursor: pointer;
+  outline: none;
+  letter-spacing: 3px;
+  padding: 20px 40px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  @extend %disable-select;
 
-	@include max-breakpoint('medium') {
-		padding: 15px 35px;
-	}
+  @include max-breakpoint("medium") {
+    padding: 15px 35px;
+  }
 
-	@include max-breakpoint('xsmall') {
-		padding: 15px 25px;
-	}
+  @include max-breakpoint("xsmall") {
+    padding: 15px 25px;
+  }
 }
 
 .button__image {
-	max-width: 24px;
-	height: auto;
-	object-position: center;
-	margin-right: 10px;
+  max-width: 24px;
+  height: auto;
+  object-position: center;
+  margin-right: 10px;
 
-	@include max-breakpoint('xsmall') {
-		margin: 0;
-	}
+  @include max-breakpoint("xsmall") {
+    margin: 0;
+  }
 }
 
 .button__text {
-	font-weight: bold;
-	@include max-breakpoint('xsmall') {
-		font-size: rem(14px);
-	}
+  font-weight: bold;
+  @include max-breakpoint("xsmall") {
+    font-size: toRem(14px);
+  }
 }
 
 .button--primary {
-	border: none;
-	color: var(--colorDark);
-	background: var(--colorMain);
+  border: none;
+  color: var(--colorDark);
+  background: var(--colorMain);
 
-	&:hover {
-	}
+  &:hover {
+  }
 }
 
 .button--secondary {
-	border: var(--borderSize) solid var(--colorMain);
-	color: var(--colorLight);
+  border: var(--borderSize) solid var(--colorMain);
+  color: var(--colorLight);
 
-	&:hover {
-		color: var(--colorDark);
-		background: var(--colorMain);
-	}
+  &:hover {
+    color: var(--colorDark);
+    background: var(--colorMain);
+  }
 
-	&:hover {
-		img {
-			filter: brightness(0);
-		}
-	}
+  &:hover {
+    img {
+      filter: brightness(0);
+    }
+  }
 }

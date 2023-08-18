@@ -1,36 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Vampiro+One&display=swap');
-@import './functions';
-@import './mixins';
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Vampiro+One&display=swap");
+@import "./functions";
+@import "./mixins";
 
 :root {
-	//fonts
-	--fontHeader2: #{rem(54px)} 'Roboto', sans-serif;
-	--fontHeader3: #{rem(36px)} 'Roboto', sans-serif;
-	--fontMain: #{rem(18px)} 'Roboto', sans-serif;
-	--fontLogo: #{rem(36px)} 'Vampiro One', cursive;
-	--defaultFontSize: 18px;
+  //fonts
+  --fontHeader2: #{toRem(54px)} "Roboto", sans-serif;
+  --fontHeader3: #{toRem(36px)} "Roboto", sans-serif;
+  --fontMain: #{toRem(18px)} "Roboto", sans-serif;
+  --fontLogo: #{toRem(36px)} "Vampiro One", cursive;
+  --defaultFontSize: 18px;
 
-	//colors
-	--colorMain: #ffcb0c;
-	--colorTitle: #ffffff30;
-	--colorLight: #fafafa;
-	--colorDark: #4a4a4a;
-	--colorError: #ff2b1c;
+  //colors
+  --colorMain: #ffcb0c;
+  --colorTitle: #ffffff30;
+  --colorLight: #fafafa;
+  --colorDark: #4a4a4a;
+  --colorError: #ff2b1c;
 
-	//util
-	--transitionDuration: 0.3s;
-	--borderRadius: 5px;
-	--borderSize: 2px;
+  //util
+  --transitionDuration: 0.3s;
+  --borderRadius: 5px;
+  --borderSize: 2px;
 
-	@include max-breakpoint('medium') {
-		--fontHeader2: #{rem(36px)} 'Roboto', sans-serif;
-		--fontHeader3: #{rem(27px)} 'Roboto', sans-serif;
-	}
+  @include max-breakpoint("medium") {
+    --fontHeader2: #{toRem(36px)} "Roboto", sans-serif;
+    --fontHeader3: #{toRem(27px)} "Roboto", sans-serif;
+  }
 
-	@include max-breakpoint('xsmall') {
-		--fontHeader2: #{rem(27px)} 'Roboto', sans-serif;
-		--fontHeader3: #{rem(18px)} 'Roboto', sans-serif;
-		--fontLogo: #{rem(27px)} 'Vampiro One', cursive;
-	}
+  @include max-breakpoint("xsmall") {
+    --fontHeader2: #{toRem(27px)} "Roboto", sans-serif;
+    --fontHeader3: #{toRem(18px)} "Roboto", sans-serif;
+    --fontLogo: #{toRem(27px)} "Vampiro One", cursive;
+  }
 }

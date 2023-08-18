@@ -1,168 +1,168 @@
-@import '../../styles//index.scss';
+@import "../../styles//index.scss";
 
 .side-nav {
-	position: fixed;
-	top: 0;
-	right: 0;
-	transform: translateX(100%);
-	width: 400px;
-	height: 100vh;
-	background: var(--colorMain);
-	z-index: 1000;
-	display: flex;
-	align-items: center;
-	transition: all var(--transitionDuration) ease-out;
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  width: 400px;
+  height: 100vh;
+  background: var(--colorMain);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  transition: all var(--transitionDuration) ease-out;
 
-	@include max-breakpoint('xsmall') {
-		width: 100%;
-	}
+  @include max-breakpoint("xsmall") {
+    width: 100%;
+  }
 }
 
 .side-nav.active {
-	transform: translateX(0);
-	@include max-breakpoint('xsmall') {
-		.side-nav__toggle-button {
-			left: unset;
-			right: 25px;
-			z-index: 10000;
-			--backgroundToggle: var(--colorDark);
-		}
-	}
+  transform: translateX(0);
+  @include max-breakpoint("xsmall") {
+    .side-nav__toggle-button {
+      left: unset;
+      right: 25px;
+      z-index: 10000;
+      --backgroundToggle: var(--colorDark);
+    }
+  }
 }
 
 .side-nav__list {
-	display: flex;
-	height: 100%;
-	flex-direction: column;
-	justify-content: center;
-	width: 300px;
-	position: absolute;
-	left: 50%;
-	transform: translate(-50%, 0);
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
 .side-nav__list-item {
-	display: flex;
-	justify-content: center;
-	list-style: none;
+  display: flex;
+  justify-content: center;
+  list-style: none;
 
-	cursor: pointer;
+  cursor: pointer;
 
-	&:hover {
-		transform: scale(1.1);
-		.side-nav__link,
-		.side-nav__get {
-			color: #000000;
-		}
-	}
+  &:hover {
+    transform: scale(1.1);
+    .side-nav__link,
+    .side-nav__get {
+      color: #000000;
+    }
+  }
 
-	&:hover::before {
-		content: '';
-		position: absolute;
-		height: 10px;
-		width: 2px;
-		background: var(--colorDark);
-		left: 15%;
-		top: 50%;
-		transform: translateY(-50%);
-	}
+  &:hover::before {
+    content: "";
+    position: absolute;
+    height: 10px;
+    width: 2px;
+    background: var(--colorDark);
+    left: 15%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 
-	&:hover::after {
-		content: '';
-		position: absolute;
-		height: 10px;
-		width: 2px;
-		background: var(--colorDark);
-		right: 15%;
-		top: 50%;
-		transform: translateY(-50%);
-	}
+  &:hover::after {
+    content: "";
+    position: absolute;
+    height: 10px;
+    width: 2px;
+    background: var(--colorDark);
+    right: 15%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
 
 .side-nav__link {
-	color: var(--colorDark);
-	text-decoration: none;
-	font-size: rem(27px);
-	display: inline-block;
-	text-transform: uppercase;
-	font-weight: 800;
-	padding: 25px 15px;
-	height: 100%;
+  color: var(--colorDark);
+  text-decoration: none;
+  font-size: toRem(27px);
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 800;
+  padding: 25px 15px;
+  height: 100%;
 
-	@include max-breakpoint('xsmall') {
-		font: var(--fontMain);
-	}
+  @include max-breakpoint("xsmall") {
+    font: var(--fontMain);
+  }
 }
 
 .side-nav__get {
-	font-size: rem(18px);
-	position: relative;
-	color: var(--colorDark);
-	font-weight: bold;
+  font-size: toRem(18px);
+  position: relative;
+  color: var(--colorDark);
+  font-weight: bold;
 }
 
 .side-nav__get::before {
-	content: '';
-	height: 2px;
-	width: 100%;
-	position: absolute;
-	bottom: 1px;
-	background: black;
+  content: "";
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  bottom: 1px;
+  background: black;
 }
 
 .side-nav__toggle-button {
-	position: absolute;
-	left: -130px;
-	top: 42.5px;
-	width: 30px;
-	height: 30px;
-	transition: all var(--transitionDuration) ease-out;
-	cursor: pointer;
-	--backgroundToggle: #fff;
+  position: absolute;
+  left: -130px;
+  top: 42.5px;
+  width: 30px;
+  height: 30px;
+  transition: all var(--transitionDuration) ease-out;
+  cursor: pointer;
+  --backgroundToggle: #fff;
 
-	@include max-breakpoint('medium') {
-		left: -80px;
-	}
+  @include max-breakpoint("medium") {
+    left: -80px;
+  }
 
-	@include max-breakpoint('xsmall') {
-		transition-delay: var(--transitionDuration);
-		left: -55px;
-		top: 33px;
-	}
+  @include max-breakpoint("xsmall") {
+    transition-delay: var(--transitionDuration);
+    left: -55px;
+    top: 33px;
+  }
 }
 
 .side-nav__toggle-button:hover {
-	--backgroundToggle: var(--colorMain);
+  --backgroundToggle: var(--colorMain);
 }
 
 .side-nav__toggle-button:before {
-	content: '';
-	position: absolute;
-	top: 7px;
-	width: 100%;
-	height: 2px;
-	background: var(--backgroundToggle);
-	transition: inherit;
+  content: "";
+  position: absolute;
+  top: 7px;
+  width: 100%;
+  height: 2px;
+  background: var(--backgroundToggle);
+  transition: inherit;
 }
 
 .side-nav__toggle-button:after {
-	content: '';
-	position: absolute;
-	bottom: 7px;
-	width: 100%;
-	height: 2px;
-	background: var(--backgroundToggle);
-	transition: inherit;
+  content: "";
+  position: absolute;
+  bottom: 7px;
+  width: 100%;
+  height: 2px;
+  background: var(--backgroundToggle);
+  transition: inherit;
 }
 
 .side-nav.active .side-nav__toggle-button::before {
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%) rotate(45deg);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .side-nav.active .side-nav__toggle-button::after {
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%) rotate(-45deg);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
