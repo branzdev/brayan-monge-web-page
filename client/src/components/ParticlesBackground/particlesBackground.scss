@@ -1,9 +1,8 @@
-@import '../../styles//index.scss';
+@import "../../styles/index.scss";
 
 .particles {
 	position: absolute;
 	z-index: 1;
 	height: 100vh;
 	width: 100vw;
-	background: #000000;
 }
