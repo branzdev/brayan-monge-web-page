@@ -130,7 +130,7 @@ export default function Proyects() {
 									paragraph={projects[0].paragraph}
 									logos={projects[0].logos}
 									website="https://jmendezconstructorasa.herokuapp.com"
-									github="https://github.com/bmongemendez/JM-Constructora"
+									github="https://github.com/branzdev/JM-Constructora"
 									button
 								/>
 							}
@@ -146,7 +146,7 @@ export default function Proyects() {
 									subTitle={projects[1].subTitle}
 									paragraph={projects[1].paragraph}
 									logos={projects[1].logos}
-									github="https://github.com/bmongemendez/brayan-monge-web-page"
+									github="https://github.com/branzdev/brayan-monge-web-page"
 									button
 								/>
 							}
@@ -162,8 +162,8 @@ export default function Proyects() {
 									subTitle={projects[2].subTitle}
 									paragraph={projects[2].paragraph}
 									logos={projects[2].logos}
-									github="https://github.com/bmongemendez/personal-portfolio-webpage-fcc"
-									website="https://codepen.io/bmongemendez/full/abyOBeq"
+									github="https://github.com/branzdev/personal-portfolio-webpage-fcc"
+									website="https://codepen.io/branzdev/full/abyOBeq"
 									button
 								/>
 							}
@@ -179,7 +179,7 @@ export default function Proyects() {
 									utility={projects[3].utility}
 									paragraph={projects[3].paragraph}
 									logos={projects[3].logos}
-									github="https://github.com/bmongemendez/TurnTheJump"
+									github="https://github.com/branzdev/TurnTheJump"
 									button
 								/>
 							}
@@ -195,7 +195,7 @@ export default function Proyects() {
 									paragraph={projects[4].paragraph}
 									logos={projects[4].logos}
 									button
-									github="https://github.com/bmongemendez"
+									github="https://github.com/branzdev"
 								/>
 							}
 						></Route>
@@ -210,7 +210,7 @@ export default function Proyects() {
 									paragraph={projects[3].paragraph}
 									logos={projects[3].logos}
 									button
-									github="https://github.com/bmongemendez"
+									github="https://github.com/branzdev"
 								/>
 							}
 						></Route>
